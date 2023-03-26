@@ -26,17 +26,17 @@ def main():
     #return 'Hello'
     #color = os.environ.get('APP_COLOR') or random.choice(["pink","blue","yellow"])
     #print(color)
-    return render_template('hello2.html', name=socket.gethostname(), color_codes["red"])
+    return render_template('hello.html', name=socket.gethostname(), color_codes["red"])
 
 @app.route('/color/<new_color>')
 def new_color(new_color):
-    return render_template('hello2.html', name=socket.gethostname(), color_codes["red"])
+    return render_template('hello.html', name=socket.gethostname(), color_codes["red"])
 
 @app.route('/read_file')
 def read_file():
     f = open("/data/testfile.txt")
     contents = f.read()
-    return render_template('hello2.html', name=socket.gethostname(), contents=contents, color_codes["red"])
+    return render_template('hello.html', name=socket.gethostname(), contents=contents, color_codes["red"])
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="8080")
