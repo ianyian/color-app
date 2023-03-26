@@ -17,14 +17,14 @@ color_codes = {
     "purple": "#7d3c98"
 }
 
-#color = os.environ.get('APP_COLOR') or random.choice(["red","green"])
+color = os.environ.get('APP_COLOR') or random.choice(["red","green"])
 #color = os.environ.get('APP_COLOR') or random.choice(["white"])
 #color = os.environ.get('APP_COLOR') or random.choice(["pink","blue","yellow"])
 
 @app.route("/")
 def main():
     #return 'Hello'
-    #print(color)
+    print(color)
     return render_template('hello.html', name=socket.gethostname(), color=color_codes[color])
 
 @app.route('/color/<new_color>')
